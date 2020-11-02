@@ -1,0 +1,86 @@
+{% extends "job/base.html" %}
+{% load static %}
+{% block content %}
+    <div class="cos">
+        <h1>Featured Jobs</h1>
+    </div>
+    <div class="container first">
+        {% for job in job %}
+        <div class="row bd ">
+
+            <div class="col-2">
+                <img src="{% static 'job/image/et.jpg' %}" alt="" class="img-fluid img-circle">
+            </div>
+            <div class="col-10">
+                <div class="row">
+                    <div class="col-10">
+                        <h3>{{job.job}}</h3>
+                    </div>
+                    <div class="col-2">
+                        <small>7 hours ago</small>
+                    </div>
+                </div>  
+                <div class="row">
+                    <div class="col-5">
+                        
+
+                        <p>{{job.company}}</p>
+                        
+                    </div>
+                    
+                    <div class="col-2">
+                        <i class="fa fa-bookmark" aria-hidden="true"> {{job.job_type}}</i>
+                    </div>
+
+                    <div class="col-3">
+                        <i class="fa fa-location-arrow" aria-hidden="true">{{job.location}}</i>
+                    </div>
+
+                
+
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <i class="fa fa-calendar" aria-hidden="true"> {{job.date_posted}} - {{job.date_ended}} </i>
+                    </div>
+                    <div class="col">
+                        <i class="fa fa-map-pin" aria-hidden="true"> Experience Level : {{job.experience}}</i>
+                    </div>
+                </div>
+                <div class="row  xe ">
+                    <div class="col ">
+                        <p>Address: {{job.address}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col ">
+                        <i class="fa fa-heart" aria-hidden="true"><a href="#">save</a></i>
+                    </div>
+                    <button class="btn btn-secondary bg-danger">
+                        <a href="#" class="text-light">view more</a>
+                </button>
+                </div>
+
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+        
+   
+        
+
+    
+    
+      <div class="wide ">
+        <h3>Our Sidebar</h3>
+        <p class='text-muted'>You can put any information here you'd like.
+          <ul class="list-group">
+            <li class="list-group-item list-group-item-light">Latest Posts</li>
+            <li class="list-group-item list-group-item-light">Announcements</li>
+            <li class="list-group-item list-group-item-light">Calendars</li>
+            <li class="list-group-item list-group-item-light">etc</li>
+          </ul>
+        </p>
+      </div>
+    </div>
+{% endblock content %}
